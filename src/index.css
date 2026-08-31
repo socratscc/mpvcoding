@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn tokens mapped to ToolForge palette */
+    --background: 60 9% 98%;        /* #FAFAF9 */
+    --foreground: 60 3% 11%;        /* #1C1C1A */
+    --card: 0 0% 100%;
+    --card-foreground: 60 3% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 60 3% 11%;
+    --primary: 222 63% 53%;         /* #3B6BD4 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 5% 95%;
+    --secondary-foreground: 60 3% 35%;
+    --muted: 60 5% 95%;
+    --muted-foreground: 60 3% 53%;  /* #8A8A84 */
+    --accent: 220 90% 97%;          /* #EEF3FC */
+    --accent-foreground: 222 63% 40%;
+    --destructive: 8 62% 47%;       /* #C2402E */
+    --destructive-foreground: 0 0% 98%;
+    --border: 60 6% 89%;            /* #E4E4E0 */
+    --input: 60 6% 89%;
+    --ring: 222 63% 53%;
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-pagebg text-ink font-sans antialiased;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  h1, h2, h3, h4 {
+    @apply font-sans text-ink;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  @media (min-width: 768px) {
+    h1 { font-size: 32px; line-height: 40px; }
+  }
+  h2 { font-size: 22px; line-height: 30px; font-weight: 600; letter-spacing: -0.01em; }
+  h3 { font-size: 17px; line-height: 26px; font-weight: 600; }
+}
+
+@layer utilities {
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes resultflash {
+  from { background-color: #EEF3FC; }
+  to { background-color: transparent; }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

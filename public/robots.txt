@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mpvcoding.workers.dev/sitemap.xml
